@@ -38,7 +38,7 @@ func deleteMember(w http.ResponseWriter, r *http.Request) {
 func main() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/members", getMembers).Methods("GET")
-	router.HandleFunc("deleteMember/{id}", deleteMember).Methods("DELETE")
+	router.HandleFunc("/deleteMember/{id}", deleteMember).Methods("DELETE")
 
 	fmt.Println("Server starts on port 3000...")
 	log.Fatal(http.ListenAndServe(":3000", router))
